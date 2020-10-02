@@ -62,7 +62,7 @@ public class RideCountExample {
 		StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
 
 		// start the data generator
-		DataStream<TaxiRide> rides = env.addSource(new TaxiRideSource(input, maxEventDelay, servingSpeedFactor));
+		DataStream<TaxiRide> rides = env.addSource(new TaTaxiRideSourcexiRideSource(input, maxEventDelay, servingSpeedFactor));
 
 		// map each ride to a tuple of (driverId, 1)
 		DataStream<Tuple2<Long, Long>> tuples = rides.map(new MapFunction<TaxiRide, Tuple2<Long, Long>>() {
